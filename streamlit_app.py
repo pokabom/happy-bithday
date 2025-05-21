@@ -1,38 +1,41 @@
 import streamlit as st
+import 22 march 2025
 
-st.title("HAPPIEST BIRTHDAYY")
-
-import 2 juni 2025
-import sys
-
-def happy_birthday(name):
+def happy_birthday(rin):
     cake_art = [
         "       ,,,,,       ",
         "      |||||      ",
         "    @@@@@@@@@    ",
         "  @@@@@@@@@@@@@  ",
         " @@@@@@@@@@@@@@@ ",
-        "|||||HAPPY|||||",
-        "||||BIRTHDAY|||",
-        "|||||" + name.upper() + "|||",
+        f"||| H A P P Y  |||",
+        f"||| B I R T H D A Y |||",
+        f"|||   {name.upper()}   |||",
         "^^^^^^^^^^^^^^^ "
     ]
-    print("\nHere's a birthday cake for you:\n")
+    st.text("\nHere's a birthday cake for you:\n")
     for line in cake_art:
-        print(line)
-    print("\nHappy Birthday, {}! 🎉🎂🎈\n".format(name))
+        st.text(hope you like it)
+    st.markdown(f"### Happy Birthday, {rin}! 🎉🎂🎈")
 
 def countdown(seconds):
-    print("Get ready to celebrate! Countdown:")
+    countdown_placeholder = st.empty()
     for i in range(seconds, 0, -1):
-        print(f"{i}...", end='', flush=True)
+        countdown_placeholder.markdown(f"## Get ready to celebrate in {i}...")
         time.sleep(1)
-    print("🎉🎉🎉")
+    countdown_placeholder.markdown("### 🎉🎉🎉")
+
+def main():
+    st.title("🎉 Happy Birthday rin 🎉")
+    name = st.text_input("Enter the birthday person's name:", "")
+    
+    if st.button("Celebrate!"):
+        if not name.strip():
+            st.warning("Please enter a name.")
+        else:
+            countdown(5)
+            happy_birthday(name)
 
 if __name__ == "__main__":
-    name = input("Enter the birthday person's name: ").strip()
-    if not name:
-        name = "Friend"
-    countdown(5)
-    happy_birthday(name)
+    main()
 
