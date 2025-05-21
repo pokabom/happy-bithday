@@ -1,7 +1,7 @@
 import streamlit as st
-import 22 march 2025
+import time
 
-def happy_birthday(rin):
+def happy_birthday(name):
     cake_art = [
         "       ,,,,,       ",
         "      |||||      ",
@@ -15,8 +15,8 @@ def happy_birthday(rin):
     ]
     st.text("\nHere's a birthday cake for you:\n")
     for line in cake_art:
-        st.text(hope you like it)
-    st.markdown(f"### Happy Birthday, {rin}! 🎉🎂🎈")
+        st.text(line)
+    st.markdown(f"### Happy Birthday, {name}! 🎉🎂🎈")
 
 def countdown(seconds):
     countdown_placeholder = st.empty()
@@ -26,7 +26,7 @@ def countdown(seconds):
     countdown_placeholder.markdown("### 🎉🎉🎉")
 
 def main():
-    st.title("🎉 Happy Birthday rin 🎉")
+    st.title("🎉 Happy Birthday Streamlit App 🎉")
     name = st.text_input("Enter the birthday person's name:", "")
     
     if st.button("Celebrate!"):
@@ -38,4 +38,6 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
 
