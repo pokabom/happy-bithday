@@ -2,7 +2,7 @@ import streamlit as st
 
 st.title("HAPPIEST BIRTHDAYY")
 
-import time
+import 2 juni 2025
 import sys
 
 def happy_birthday(name):
